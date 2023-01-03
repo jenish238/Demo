@@ -1,0 +1,21 @@
+<apex:page controller="LoginSignUpController">
+    <apex:form >
+    <apex:pageBlock >
+    <apex:pageBlockSection >
+         <apex:inputField id="name" value="{!Student.Student_Name__c}" required="true"/>
+        </apex:pageBlockSection>
+    
+    <apex:pageBlockSection >
+        <apex:pageBlockSectionItem >
+        
+            <apex:outputLabel value="password" for="pass"/>
+         <apex:inputSecret id="pass" value="{!Student.Student_Phone__c}" required="true"/>     
+            </apex:pageBlockSectionItem>
+      </apex:pageBlockSection>
+       
+        <apex:commandButton value="signUp" action="{!signUp}"/>
+          
+
+    </apex:pageBlock>
+        </apex:form>
+</apex:page>

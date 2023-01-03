@@ -1,0 +1,25 @@
+<apex:page id="pgId" controller="ContactDetailOnClickofAccount">
+    <apex:form  id="frm">
+        <apex:pageBlock  id="pgblk">
+            <Apex:pageblockSection title="Accounts" id="pbsec">
+                <apex:pageBlockTable value="{!accounts}" var="account" id="pgtable">
+                    <apex:column headervalue="Account name">
+                        <apex:commandLink value="{!account.Name}"  ReRender="contactBlock">
+                          <apex:actionSupport event="onclick" action="{!getRelatedContact}" rerender="conpgblk" >
+                                <apex:param name="accountId" assignTo="{!accountId}" value="{!account.Id}"/>
+                            </apex:actionSupport>
+                        </apex:commandLink>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageblockSection>
+        </apex:pageBlock>
+        <apex:pageBlock id="conpgblk">
+            <apex:pageblockSection title="Contacts">
+               <apex:pageBlockTable value="{!contacts}" var="contact">
+                     <apex:column headervalue="First Name" value="{!contact.FirstName}" />
+                     <apex:column headervalue="Last Name" value="{!contact.lastName}" />
+                </apex:pageBlockTable>
+            </apex:pageblockSection>
+       </apex:pageBlock>
+     </apex:form>
+</apex:page>

@@ -1,0 +1,9 @@
+<apex:page controller="loginController">
+    <apex:form >
+        <apex:outputPanel id="getInput" rendered="{!getInput}">
+            <apex:inputText value="{!userName}"/>
+            <apex:commandButton value="Search" action="{!searchUserName}" reRender="showResult"/>
+        </apex:outputPanel>
+        
+    </apex:form>
+</apex:page>

@@ -1,0 +1,4 @@
+<apex:page >
+<apex:image url="{!URLFOR($Resource.image)}" width="100%"/>
+<!-- <apex:image value="Downloads" -->
+</apex:page>

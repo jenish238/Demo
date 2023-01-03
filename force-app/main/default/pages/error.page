@@ -1,0 +1,64 @@
+<apex:page >
+
+<style>
+
+.page_404{ padding:40px 0; background:#fff; font-family: 'Arvo', serif;
+}
+
+.page_404  img{ width:100%;}
+
+.four_zero_four_bg{
+ 
+ background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+    height: 400px;
+    background-position: center;
+ }
+ 
+ 
+ .four_zero_four_bg h1{
+ font-size:80px;
+ }
+ 
+  .four_zero_four_bg h3{
+			 font-size:80px;
+			 }
+			 
+			 .link_404{			 
+	color: #fff!important;
+    padding: 10px 20px;
+    background: #39ac31;
+    margin: 20px 0;
+    display: inline-block;}
+	.contant_box_404{ margin-top:-50px;}
+    .a2{
+        font-size: 30px;
+    }
+</style>
+
+<section class="page_404">
+	<div class="container">
+		<div class="row">	
+		<div class="col-sm-12 ">
+		<div class="col-sm-10 col-sm-offset-1  text-center">
+		<div class="four_zero_four_bg">
+			<h1 class="text-center ">404</h1>
+		
+		
+		</div>
+		
+		<div class="contant_box_404">
+		<h3 class="h2 a2">
+		Look like you're lost
+		</h3>
+		
+		<p class="a2">the page you are looking for not avaible!</p>
+		
+		<a href="https://mvclouds-c-dev-ed.develop.file.force.com/secur/contentDoor?startURL=https%3A%2F%2Fmvclouds-c-dev-ed.develop.my.salesforce.com%2Fvisualforce%2Fsession%3Furl%3Dhttps%253A%252F%252Fmvclouds-c-dev-ed.develop.lightning.force.com%252Flightning%252Fo%252FAccount%252Flist%253FfilterName%253DRecent&sid=00D5g00000I1Jhz%21AQgAQFDVZZb5tY.aEPhmEwUVSKQEdWNPx0u.rCPfvVShKwyuZGxsFIsJnhlZrkB_edZAlpTMERRvsgs_SlUNpeJv.q5G.9si&skipRedirect=1&lm=eyJlbmMiOiJBMjU2R0NNIiwiYXVkIjoiMDBENWcwMDAwMEkxSmh6Iiwia2lkIjoie1widFwiOlwiMDBENWcwMDAwMEkxSmh6XCIsXCJ2XCI6XCIwMkc1ZzAwMDAwMEFxVmNcIixcImFcIjpcImNvbnRlbnRkb29ydXNlcnRyYW5zaWVudGtleWVuY3J5cHRcIixcInVcIjpcIjAwNTVnMDAwMDBGOXNPT1wifSIsImNyaXQiOlsiaWF0Il0sImlhdCI6MTY2ODQ0MDcxNjI4MCwiZXhwIjowfQ%3D%3D..94jXGxdyzMRU5dmp.FNFQ_-RLLy7uIiU6zjEBhw%3D%3D.usIML1irO17IhIeG_P-Zgw%3D%3D" class="link_404">Go to Home</a>
+	</div>
+		</div>
+		</div>
+		</div>
+	</div>
+</section>
+
+</apex:page>

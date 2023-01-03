@@ -1,0 +1,92 @@
+<aura:component controller="AccountsController">
+    <aura:attribute name="accounts" type="Account[]" />
+    <aura:attribute name="Contacts" type="Contact[]" />
+    <aura:attribute name="key" type="String" /> 
+    <aura:attribute name="paginationList" type="Contact[]"/>
+    <aura:attribute name="pageSize" type="Integer" default="5"/>
+    <aura:attribute name="totalSize" type="Integer"/>
+    <aura:attribute name="start" type="Integer" />
+    <aura:attribute name="end" type="Integer"/>
+    <aura:attribute name="pageNumber" type="Integer"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />        
+    <lightning:input type="text" name="searchKey" label="Enter Account Name" aura:id="searchKey" onchange="{!c.searchKeyChange}" placeholder="Search" /> 
+    
+    <h1 style="text-align: center;font-size:40px">Account AND contact</h1>
+   <h6>Account Information</h6> 
+
+    <table class="slds-table slds-table_bordered slds-table_striped slds-table_cell-buffer slds-table_fixed-layout">
+        <thead>
+            <tr class="slds-text-heading_label"> 
+                <th scope="col"><div class="slds-truncate" title="Name">Name</div></th>
+                <th scope="col"><div class="slds-truncate" title="Type">Type</div></th>         
+                <th scope="col"><div class="slds-truncate" title="Phone">Phone</div></th>            
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.accounts}" var="account" indexVar="index">
+                <tr>  
+                    <th scope="row">
+                    <td><a class="slds-truncate" onclick="{!c.caList}"  value="{!account}" data-index="{!index}">{!account.Name}</a></td></th>
+                    <td><div class="slds-truncate" title="{!account.Type}">{!account.Type}</div></td>                   
+                    <td><div class="slds-truncate" title="{!account.Phone}">{!account.Phone}</div></td>                    
+                </tr>
+            </aura:iteration>
+        </tbody>
+    </table>
+    
+    <br></br>
+    <br></br>
+    
+    Contact Detail 
+    <br></br>
+    Page = {!v.pageNumber}
+    <table class="slds-table slds-table_bordered slds-table_striped slds-table_cell-buffer slds-table_fixed-layout">
+        <thead>
+            <tr class="slds-text-heading_label">              
+                <th scope="col"><div class="slds-truncate s1" title="FirstName">FirstName</div></th>
+                <th scope="col"><div class="slds-truncate" title="LastName">LastName</div></th>         
+                <th scope="col"><div class="slds-truncate" title="Email">Email</div></th>            
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.paginationList}" var="item">
+                    
+                <tr>  
+                    <td><div class="slds-truncate" title="{!item.FirstName}">{!item.FirstName}</div></td>
+                    <td><div class="slds-truncate" title="{!item.LastName}">{!item.LastName}</div></td>                   
+                    <td><div class="slds-truncate" title="{!item.Email}">{!item.Email}</div></td>                    
+                </tr>
+            </aura:iteration>
+
+
+<lightning:button label="Previous" disabled="{!v.start == 0}"  onclick="{!c.previous}" />
+
+<lightning:button label="Next" disabled="{!v.end >= v.totalSize}" onclick="{!c.next}" />
+
+
+        </tbody>
+    </table>
+</aura:component>
+
+
+
+
+
+
+
+
+<!-- <table >
+
+        <tr > <td style="width:5%">Show</td><td style="width:7%"><ui:inputSelect aura:id="records" change="{!c.onSelectChange}">
+        
+        <ui:inputSelectOption text="5" value="5"/>
+        
+        <ui:inputSelectOption text="10" value="10"/>
+        
+        <ui:inputSelectOption text="20" value="20"/>
+        
+        <ui:inputSelectOption text="30" value="30"/>
+        
+        </ui:inputSelect></td><td>Entries</td>
+        </tr>
+    </table> -->

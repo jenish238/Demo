@@ -1,0 +1,67 @@
+<apex:page controller="Registerpage">
+
+    <apex:form id="form">
+        <apex:pageBlock id="pageBlock2">
+            <apex:actionFunction name="call" action="{!signUp}"  />
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="LastName" for="pass3" />
+                    <apex:inputField id="pass3" value="{!con.LastName}" required="true" />
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="email" for="pass1" />
+                    <apex:inputField id="pass1" value="{!con.Email}" required="true" />
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem id="p1">
+                    <apex:outputLabel value="password" for="pass" id="password"  />
+                    <apex:inputField id="pass" value="{!con.password__c}" required="true"/>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Account" for="pass2" />
+                    <apex:inputField id="pass2" value="{!con.AccountId}" required="true" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockButtons location="bottom">
+
+                <apex:commandButton value="Register" onclick="validation();"  />
+                
+            </apex:pageBlockButtons>
+            <!-- action="{!signUp}" -->
+        </apex:pageBlock>
+        <script type="text/javascript">
+            function validation() {
+                var passError = true;
+                var valType = document.getElementById('{!$Component.form.pageBlock2.p1.pass}').value;
+                console.log(valType);
+                var minNumberofChars = 6;
+                var maxNumberofChars = 16;
+                var regularExpression = /^[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+                if (valType == "") {
+                    alert("enter the password");
+                }
+               else if (valType.length < minNumberofChars || valType.length > maxNumberofChars) {
+                    alert("enter the password");
+                    
+                }
+               else if (regularExpression.test(valType) === false) {
+                    alert("password should contain atleast one number and one special character");
+                }
+                else{
+                  passError = false;
+                }
+
+
+                if ( passError == true) {
+                return false;
+            } else {
+                call();
+                alert("contect has been created");
+            }
+            };
+        </script>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,22 @@
+<apex:page Controller="SearchInVFController">
+    <apex:form >
+        <apex:inputText onkeyup="search()"  value="{!searchKey}" label="Input"/>
+        <apex:commandButton value="Search records" action="{!search}"/>
+        <apex:commandButton value="Clear records" action="{!clear}"/>
+        <apex:pageBlock title="Search Result">
+            <apex:pageBlockTable value="{!acc}" var="a">
+                <apex:column value="{!a.FirstName}"/>
+                <apex:column value="{!a.LastName}"/>
+                <apex:column value="{!a.id}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        <apex:panelGrid columns="5">
+            <apex:commandLink action="{!previous}">Previous</apex:commandlink>
+            <apex:outputText value="{!a2}"></apex:outputText>
+            <apex:outputText value="-"></apex:outputText>
+            <apex:outputText value="{!a1}"></apex:outputText>
+
+            <apex:commandLink action="{!next}">Next</apex:commandlink>
+        </apex:panelGrid>
+    </apex:form>
+</apex:page>

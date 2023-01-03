@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>Background_Color</name>
+                    <value>black</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>Description</name>
+                    <value>This is my First Email Template</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>Font_Color</name>
+                    <value>blue</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>Font_size</name>
+                    <value>400px</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>image_URl</name>
+                    <value>https://images.unsplash.com/photo-1666624481306-0ce40f51ec7b?crop=entropy&amp;amp;cs=tinysrgb&amp;amp;fit=max&amp;amp;fm=jpg&amp;amp;ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2OTIzMDE0MQ&amp;amp;ixlib=rb-4.0.3&amp;amp;q=80&amp;amp;w=1080&quot;</value>
+                </componentInstanceProperties>
+                <componentName>task5HomePage</componentName>
+                <identifier>c_task5HomePage</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>top</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <name>left</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <name>middle</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <name>right</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>new Home Page</masterLabel>
+    <template>
+        <name>home:desktopTemplateHeaderThreeColumns</name>
+    </template>
+    <type>HomePage</type>
+</FlexiPage>

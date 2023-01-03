@@ -1,0 +1,15 @@
+<apex:page controller="futermethod">
+    <apex:form >
+        <style>
+        /* body{
+            background-image: url('https://source.unsplash.com/random');        
+        }
+         */
+        </style>
+        <apex:pageBlock >
+<apex:pageBlockButtons >
+    <apex:commandButton value="Fetch Image" action="{!sendCallOut}"></apex:commandButton>
+</apex:pageBlockButtons>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

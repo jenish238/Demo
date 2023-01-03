@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Contact And Opportunity">
+        <template if:true={recordsToDisplay1}>
+            <lightning-datatable
+                    key-field="id"
+                    data={recordsToDisplay1}
+                    columns={columns1}>
+            </lightning-datatable>
+       </template>
+       <template if:true={empty1}>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  No Contact
+    </template>
+       <template if:true={recordsToDisplay2}>
+        <lightning-datatable
+                key-field="id"
+                data={recordsToDisplay2}
+                columns={columns2}>
+        </lightning-datatable>
+   </template>
+   <hr>
+   <template if:true={empty2}>
+   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; No Opportunity
+</template>
+    </lightning-card>
+
+</template>

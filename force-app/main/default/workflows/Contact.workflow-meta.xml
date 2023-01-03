@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Created_a_New_contact_recode</fullName>
+        <description>Created a New contact recode</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jenish238@gmail.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>My_Email_Templates/My_First_Email_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_is_updated</fullName>
+        <description>Email is updated</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>jenish238@gmail.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Email_update</template>
+    </alerts>
+    <alerts>
+        <fullName>Happy_Birthday_Email</fullName>
+        <description>Happy Birthday Email</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>jenish238@gmail.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>DefaultWorkflowUser</senderType>
+        <template>My_Email_Templates/Happy_Birthday_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>email_send_to_contact_after_1_day</fullName>
+        <description>email send to contact  after 1 day</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <recipient>jenish238@gmail.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Email_update</template>
+    </alerts>
+    <rules>
+        <fullName>Send Email Created new contact</fullName>
+        <actions>
+            <name>Created_a_New_contact_recode</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contact.LastName</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>contact is created</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contact.LastName</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>email_send_to_contact_after_1_day</name>
+                <type>Alert</type>
+            </actions>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>update email field</fullName>
+        <actions>
+            <name>Email_is_updated</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <formula>ISCHANGED( Email )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

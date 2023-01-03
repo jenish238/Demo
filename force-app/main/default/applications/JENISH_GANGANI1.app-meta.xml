@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <logo>HOWDOYOUDESIGNALIBRARYMANAGEMENTSYS</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>desktop only</description>
+    <formFactors>Small</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>Book Management</label>
+    <navType>Standard</navType>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>standard-Event</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>standard-Contract</tabs>
+    <tabs>standard-DigitalWallet</tabs>
+    <tabs>Employee__c</tabs>
+    <tabs>Emp</tabs>
+    <tabs>FVpage</tabs>
+    <tabs>Book_New__c</tabs>
+    <tabs>risk_calculation__c</tabs>
+    <tabs>risk_calculation_new__c</tabs>
+    <tabs>login__c</tabs>
+    <tabs>Error_log__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Book_Management_UtilityBar</utilityBar>
+</CustomApplication>

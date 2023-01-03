@@ -1,0 +1,33 @@
+<aura:component controller="sendmail"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+
+ <aura:attribute name="subject" type="String"/>
+ <aura:attribute name="body" type="String"/>
+
+ <div class="slds-grid slds-gutters slds-p-top_large slds-p-bottom_large"> 
+    <div class="slds-col slds-size_2-of-12">
+        <div class="slds-text-heading_small">Subject:</div>
+    </div>
+    <div class="slds-col slds-size_10-of-12">
+        <lightning:input variant="label-hidden" value="{!v.subject}" placeholder="Subject" required="true"/>
+    </div>
+</div>
+
+<div class="slds-grid slds-gutters slds-p-top_large"> 
+    <div class="slds-col slds-size_2-of-12">
+        <div class="slds-text-heading_small">Message:</div>
+    </div>
+    <div class="slds-col slds-size_10-of-12">
+        <lightning:inputRichText value="{!v.body}" placeholder="Email body...." required="true"/>
+    </div>
+</div>
+
+
+<div class="slds-button-group slds-m-top_large slds-p-right_medium slds-float_right" style="margin-top: 2rem;" role="group">
+    <lightning:button class="slds-m-top_medium slds-float_right" variant="brand" label="Send Email" onclick="{!c.sendMail }" />
+</div>
+
+
+
+</aura:component>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <frameHeight>600</frameHeight>
+    <hasSidebar>false</hasSidebar>
+    <label>Emp</label>
+    <motif>Custom12: Circle</motif>
+    <url>https://{!Organization.Name}</url>
+    <urlEncodingKey>ISO-8859-1</urlEncodingKey>
+</CustomTab>

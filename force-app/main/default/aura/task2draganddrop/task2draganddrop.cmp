@@ -1,0 +1,66 @@
+<aura:component controller="draganddroptask2" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+access="global">
+<!-- <aura:handler name="init" value="{!this}" action="{!doInit}"/> -->
+<aura:attribute name="contact1" type="List"/>
+<aura:attribute name="contact2" type="List"/>
+<aura:attribute name="con1Name" type="integer"/>
+<aura:attribute name="con2Name" type="integer"/>
+<aura:attribute name="AccountName11" type="string"/>
+<aura:attribute name="AccountName12" type="string"/>
+
+
+
+
+<!-- <aura:attribute name="con1Name" type="text"/> -->
+<lightning:card>
+    <lightning:layout>
+        <lightning:layoutItem size="6" padding="around-small">
+           <div class="slds-box" ondragover="{!c.dragover}" ondrop="{!c.dropcon1}">
+            
+            <lightning:input type="text" name="searchKey1"  label="Enter Account Name" aura:id="searchKey1" onchange="{!c.searchKeyChange1}" placeholder="Search" />
+            Account Name : {!v.AccountName11}
+            <br></br>
+            Contact count : {!v.con1Name}
+            <table class="slds-table slds-table_bordered slds-table_striped slds-table_cell-buffer slds-table_fixed-layout">
+                <thead>
+                    <tr class="slds-text-heading_label">              
+                        <th scope="col"><div class="slds-truncate" title="LastName">LastName</div></th>                    
+                    </tr>
+                </thead>
+                <tbody>
+            <aura:iteration items="{!v.contact1}" var="item1">
+                <div class="slds-box" title="{!item1.LastName}" draggable="true" ondragstart="{!c.dragstart}" id="{!item1.Id}">
+             {!item1.LastName}
+                </div>
+            </aura:iteration>
+        </tbody>
+    </table>
+    </div>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="6" padding="around-small">      
+                <div class="slds-box" ondragover="{!c.dragover}" ondrop="{!c.dropcon2}">
+                    <lightning:input type="text" name="searchKey2"  label="Enter Account Name" aura:id="searchKey2" onchange="{!c.searchKeyChange2}" placeholder="Search" ></lightning:input>
+                    Account Name : {!v.AccountName12}
+                    <br></br>
+                    Contact count : {!v.con2Name}
+
+                    <h1 style="font-size:10px; text-align:center"><b>Serch Account</b></h1>
+                    <table class="slds-table slds-table_bordered slds-table_striped slds-table_cell-buffer slds-table_fixed-layout">
+                        <thead>
+                            <tr class="slds-text-heading_label">              
+                                <th scope="col"><div class="slds-truncate" title="LastName">LastName</div></th>                    
+                            </tr>
+                        </thead>
+                        <tbody>
+                    <aura:iteration items="{!v.contact2}" var="item2">
+                        <div class="slds-box" title="{!item2.LastName}" draggable="true" ondragstart="{!c.dragstart}" id="{!item2.Id}">
+                     {!item2.LastName}
+                        </div>
+                    </aura:iteration>
+                </tbody>
+            </table>
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+</lightning:card>
+</aura:component>

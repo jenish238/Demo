@@ -1,0 +1,9 @@
+<apex:page controller="dropBoxApi"> 
+    <apex:form >
+         <apex:pageblock >
+             <apex:inputFile value="{!fileBody}" />
+              <apex:commandbutton action="{!DropAuth}" value="Upload Dropbox">
+                 </apex:commandbutton>
+                </apex:pageblock>
+             </apex:form> 
+            </apex:page>

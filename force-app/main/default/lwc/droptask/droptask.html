@@ -1,0 +1,30 @@
+<template>
+    <lightning-card>
+       
+            <lightning-file-upload label={label} name="fileUploader" record-id={recordId} onuploadfinished={handleActionFinished} multiple>
+            </lightning-file-upload>
+            <br>
+            <br>
+            <hr>
+   
+    </lightning-card>
+
+</template>
+
+
+<!-- 
+            Name is The {records}
+            <hr>
+            name is The {recordsToDisplay} -->
+            <!-- <input type="file" id="myFile" value={fileBody}  filename={fileName}> -->
+            <!-- <template if:true={records}>
+            <lightning-datatable
+                key-field="id"
+                data={records}
+                columns={columns}>
+        </lightning-datatable>
+    </template> -->
+     <!-- <template if:false={showOutPut}>
+            <lightning-button variant="brand" label="Login Dropbox" title="Primary action" onclick={handleLogin}
+                class="slds-m-left_x-small"></lightning-button>
+        </template> -->

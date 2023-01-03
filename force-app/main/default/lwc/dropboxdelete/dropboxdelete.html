@@ -1,0 +1,15 @@
+<template>
+    <lightning-card>
+
+    <lightning-checkbox-group name="Checkbox Group"
+    label="Checkbox Group"
+    options={options}
+    value={value}
+    onchange={handleChange}></lightning-checkbox-group>
+<hr>
+
+<lightning-button variant="brand" label="Delete File" title="Primary action" onclick={handleDelete}
+class="slds-m-left_x-small"></lightning-button>
+<!-- <lightning-button label="Refresh" onclick={refreshComponent}></lightning-button> -->
+</lightning-card>
+</template>

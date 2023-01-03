@@ -1,0 +1,35 @@
+<apex:page controller="ContactsVisualforceController" >
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!displayAccounts}" var="acc">
+            <apex:column value="{!acc.Name}"></apex:column><tr></tr>
+            <apex:repeat value="{!acc.Contacts}" var="cont">
+                <apex:column value="{!cont.LastName}"></apex:column>
+            </apex:repeat>
+             
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+
+</apex:page>
+
+<!-- <apex:column value="{!acc.Contacts.Name}"></apex:column> -->
+
+
+<!-- <apex:repeat value="{!displayAccounts}" var="acc">
+            <dl>
+            
+                <dt>Account Name:</dt>
+                <dd></dd> 
+            </dl>
+            <apex:column value="{!acc.Name}">
+            <apex:outputText  value="{!acc.Name}"/>
+            <dl><dt>Contacts:</dt></dl>
+            
+            <apex:repeat value="{!acc.Contacts}" var="cont">
+                <dl>
+                    <dd></dd>
+                </dl>
+                <apex:column value="{!cont.Name}">
+                <apex:outputText value="{!cont.Name}"/>
+            </apex:repeat>    
+        </apex:repeat>
+         -->

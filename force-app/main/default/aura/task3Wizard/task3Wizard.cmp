@@ -1,0 +1,319 @@
+<aura:component access="GLOBAL" controller="SalesforceLightningWizardController">
+    <aura:attribute name="accountData" type="Account" default="{ 'sobjectType': 'Account','Name': ''}"/>
+    <aura:attribute name="contactData" type="Contact" default="{ 'sobjectType': 'Contact','LastName': ''}"/>
+    <aura:attribute name="EventData" type="Event" default="{ 'sobjectType': 'Event','Subject' : 'Wizard Task'}"/>
+    <aura:attribute name="showAccount" type="boolean" default="true"/> '
+    <aura:attribute name="showContact" type="boolean" default="false"/> 
+    <aura:attribute name="showEvent" type="boolean" default="false"/>
+    <aura:attribute name="setMessage" type="String"/> 
+    <aura:attribute name="showError" type="boolean" default="false"/>
+    <aura:attribute name="showData" type="boolean" default="false"/>
+    <aura:attribute name="message" type="String" default="NoError"/>
+    <aura:attribute name="number1" type="Integer" default="0"/>
+    <aura:attribute name="number2" type="Integer" default="0"/>
+
+
+
+
+    <div class="slds-progress">
+        <ol class="slds-progress__list">
+        <li class="slds-progress__item  slds-is-active"  id="a1">
+        <button class="slds-button slds-progress__marker">
+        <span class="slds-assistive-text">Step 1 </span>
+        </button>
+        </li>
+        <li class="slds-progress__item" id="a2">
+        <button class="slds-button slds-progress__marker">
+        <span class="slds-assistive-text">Step 2 - Active </span>
+        </button>
+        </li>
+        <li class="slds-progress__item" id="a3">
+        <button class="slds-button slds-progress__marker">
+        <span class="slds-assistive-text">Step 3 </span>
+        </button>
+        </li>
+        <li class="slds-progress__item" id="a4">
+        <button class="slds-button slds-progress__marker">
+        <span class="slds-assistive-text">Step 4 </span>
+        </button>
+        </li>
+        </ol>
+        <div class="slds-progress-bar slds-progress-bar_x-small" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="{{Placeholder for description of progress bar}}" role="progressbar">
+        <span class="slds-progress-bar__value" style="width:0%">
+        <span class="slds-assistive-text">Progress: 0%</span>
+        </span>
+        </div>
+        </div>
+
+
+
+
+
+    
+    <div class="slds-grid slds-grid--vertical forceListViewManager adapetr-config-main">
+        <!--********* HEADER ********* -->
+        <div class="slds-page-header adapetr-header">
+            <div class="slds-media">
+                <div class="slds-media__body">
+                    <aura:renderIf isTrue="{!v.showAccount}">
+                        <h1 class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate">Salesforce Wizard 1 of 4</h1>
+                        <p class="slds-text-title--caps slds-line-height--reset">Account Creation</p>
+                    </aura:renderIf>
+                    
+                    <aura:renderIf isTrue="{!v.showContact}">
+                        <h1 class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate">Salesforce Wizard 2 of 4</h1>
+                        <p class="slds-text-title--caps slds-line-height--reset">Contact Creation</p>
+                    </aura:renderIf>
+                    <aura:renderIf isTrue="{!v.showOpportunity}">
+                        <h1 class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate">Salesforce Wizard 3 of 4</h1>
+                        <p class="slds-text-title--caps slds-line-height--reset">Event Creation</p>
+                    </aura:renderIf>
+                    <aura:renderIf isTrue="{!v.showData}">
+                        <h1 class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate">Salesforce Wizard 4 of 4</h1>
+                        <p class="slds-text-title--caps slds-line-height--reset">Record Insertion</p>
+                    </aura:renderIf>
+                    <div id="showErrorrTractConfig" class="cmn_error_msg " style="display:none; text-align:center;font-weight:700">
+                        <ui:outputText value="{!v.message}"/>
+                    </div>
+                    <div id="showMessageTractConfig" class="cmn_message " style="display:none;text-align:center;font-weight:700">
+                        <ui:outputText value="{!v.message}"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="adapetr-config-sec">
+            <h3 class="slds-text-heading--small">Please provide the following information. All the fields marked with <span class="cmn_mandatory_indicator">*</span> are required.</h3>
+            <div class="slds-box slds-align--absolute-center config-table-details">
+                <table class="slds-table ">
+                    <aura:renderIf isTrue="{!v.showError}">
+                        
+                        <ui:message title="Warning" severity="warning" closable="true">
+                            Please Fill required field first </ui:message>
+                    </aura:renderIf>
+                    
+                    <aura:renderIf isTrue="{!v.showAccount}">
+                        <tr>
+                            <td>
+                                <div class="topSpacing">
+                                    <label class="slds-form-element__label">Name<span class="cmn_mandatory_indicator">*</span></label>
+                                </div>
+                                <div class="width">  
+                                    <ui:inputText class="slds-input" aura:id="Name" value="{!v.accountData.Name}"></ui:inputText>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >
+                                <div class="topSpacing">
+                                    <label class="slds-form-element__label testcss">Account Number</label>
+                                </div>                                        
+                                <div class="width">
+                                    <ui:inputText class="slds-input "  value="{!v.accountData.AccountNumber}"></ui:inputText>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="topSpacing"> 
+                                    <label class="slds-form-element__label">Description</label>
+                                </div>
+                                
+                                <div class="width">
+                                    <ui:inputText class="slds-input" value="{!v.accountData.Description}"></ui:inputText>
+                                </div>
+                            </td>    
+                        </tr>
+                    </aura:renderIf>
+                    <aura:renderIf isTrue="{!v.showContact}">
+                        <tr>
+                            <td>
+                                <div class="topSpacing">
+                                    <label class="slds-form-element__label">First Name</label>
+                                </div>
+                                <div class="width">  
+                                    <ui:inputText class="slds-input" value="{!v.contactData.FirstName}"></ui:inputText>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >
+                                <div class="topSpacing">
+                                    <label class="slds-form-element__label ">Last Name<span class="cmn_mandatory_indicator">*</span></label>
+                                </div>                                        
+                                <div class="width">
+                                    <ui:inputText class="slds-input " aura:id="LastName" value="{!v.contactData.LastName}"></ui:inputText>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="topSpacing"> 
+                                    <label class="slds-form-element__label">phone</label>
+                                </div>
+                                
+                                <div class="width">
+                                    <ui:inputText class="slds-input" value="{!v.contactData.Phone}"></ui:inputText>
+                                </div>
+                            </td>    
+                        </tr>
+                    </aura:renderIf>  
+                    <aura:renderIf isTrue="{!v.showEvent}">
+                        <tr>
+                            <td>
+                                <div class="topSpacing">
+                                    <label class="slds-form-element__label">Location</label>
+                                </div>
+                                <div class="width">  
+                                    <ui:inputText class="slds-input" aura:id="EventLocation" value="{!v.EventData.Location}"></ui:inputText>
+                                </div>
+                            </td>
+                        </tr>
+                       
+                        <tr>
+                            <td>
+                                <div class="topSpacing"> 
+                                    <label class="slds-form-element__label">Start Date<span class="cmn_mandatory_indicator">*</span></label>
+                                </div>
+                                
+                                <div class="width">
+                                    <ui:inputDate class="slds-input" aura:id="StartDate" value="{!v.EventData.StartDateTime}" displayDatePicker="true"></ui:inputDate>
+                                </div>
+                            </td>    
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="topSpacing"> 
+                                    <label class="slds-form-element__label">End Date<span class="cmn_mandatory_indicator">*</span></label>
+                                </div>
+                                
+                                <div class="width">
+                                    <ui:inputDate class="slds-input" aura:id="EndDate" value="{!v.EventData.EndDateTime}" displayDatePicker="true"></ui:inputDate>
+                                </div>
+                            </td>    
+                        </tr>
+                    </aura:renderIf>
+                    <aura:renderIf isTrue="{!v.showData}">
+                        <p class="slds-text-title--caps slds-line-height--reset">Account Information</p>
+                        <tr>
+                            <td>
+                                <div class="topSpacing">
+                                    <label class="slds-form-element__label">Name<span class="cmn_mandatory_indicator">*</span></label>
+                                </div>
+                                <div class="width">  
+                                    <ui:outputText class="slds-output" value="{!v.accountData.Name}"></ui:outputText>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >
+                                <div class="topSpacing">
+                                    <label class="slds-form-element__label ">Account Number</label>
+                                </div>                                        
+                                <div class="width">
+                                    <ui:outputText class="slds-output" value="{!v.accountData.AccountNumber}"></ui:outputText>  
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="topSpacing"> 
+                                    <label class="slds-form-element__label">Description</label>
+                                </div>
+                                
+                                <div class="width">
+                                    <ui:outputText class="slds-output" value="{!v.accountData.Description}"></ui:outputText>  
+                                </div>
+                            </td>    
+                        </tr>
+                         <p class="slds-text-title--caps slds-line-height--reset">Contact Information</p>
+                        <tr>
+                            <td>
+                                <div class="topSpacing">
+                                    <label class="slds-form-element__label">First Name</label>
+                                </div>
+                                <div class="width">  
+                                    <ui:outputText class="slds-output" value="{!v.contactData.FirstName}"></ui:outputText>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >
+                                <div class="topSpacing">
+                                    <label class="slds-form-element__label ">Last Name</label>
+                                </div>                                        
+                                <div class="width">
+                                    <ui:outputText class="slds-output" value="{!v.contactData.LastName}"></ui:outputText>  
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="topSpacing"> 
+                                    <label class="slds-form-element__label">phone</label>
+                                </div>
+                                
+                                <div class="width">
+                                    <ui:outputText class="slds-output" value="{!v.contactData.Phone}"></ui:outputText>  
+                                </div>
+                            </td>    
+                        </tr>
+                        <p class="slds-text-title--caps slds-line-height--reset">Event Information</p>
+                        <tr>
+                            <td>
+                                <div class="topSpacing">
+                                    <label class="slds-form-element__label">Location</label>
+                                </div>
+                                <div class="width">  
+                                    <ui:outputText class="slds-output" value="{!v.EventData.Location}"></ui:outputText>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="topSpacing"> 
+                                    <label class="slds-form-element__label">Start Date<span class="cmn_mandatory_indicator">*</span></label>
+                                </div>
+                                
+                                <div class="width">
+                                    <ui:outputText class="slds-output" value="{!v.EventData.StartDateTime}"></ui:outputText>  
+                                </div>
+                            </td>    
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="topSpacing"> 
+                                    <label class="slds-form-element__label">End Date<span class="cmn_mandatory_indicator">*</span></label>
+                                </div>
+                                
+                                <div class="width">
+                                    <ui:outputText class="slds-output" value="{!v.EventData.EndDateTime}"></ui:outputText>  
+                                </div>
+                            </td>    
+                        </tr>
+                    </aura:renderIf>
+                </table>
+            </div>   
+            
+            <div class="slds-grid  slds-grid--align-center">
+                <aura:renderIf isTrue="{!v.showAccount}">
+                    <button class="slds-button slds-button--brand" onclick="{!c.nextTab}">Next</button>
+                </aura:renderIf>
+                
+                <aura:renderIf isTrue="{!v.showContact}">
+                    <button class="slds-button slds-button--brand" onclick="{!c.prevTab}" >Back</button>
+                    <button class="slds-button slds-button--brand" onclick="{!c.nextTab}" >Next</button>
+                </aura:renderIf>
+                
+                <aura:renderIf isTrue="{!v.showEvent}">        
+                    <button class="slds-button slds-button--brand" onclick="{!c.prevTab}" >Back</button> 
+                    <button class="slds-button slds-button--brand" onclick="{!c.nextTab}" >Next</button>
+                </aura:renderIf>
+                <aura:renderIf isTrue="{!v.showData}">        
+                    <button class="slds-button slds-button--brand" onclick="{!c.prevTab}" disabled="{!v.number2 == 1}" >Back</button> 
+                    <button class="slds-button slds-button--brand" onclick="{!c.saveRecord}" disabled="{!v.number2 > v.number1}" >Save</button>
+                </aura:renderIf>
+            </div>
+        </div>
+    </div>
+</aura:component>
