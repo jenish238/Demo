@@ -3,8 +3,8 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>home:heroChart</componentName>
-                <identifier>home_heroChart</identifier>
+                <componentName>task2PeriveandNext</componentName>
+                <identifier>c_task2PeriveandNext</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -12,78 +12,16 @@
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentName>home:eventContainer</componentName>
-                <identifier>home_eventContainer</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentName>home:recentRecordContainer</componentName>
-                <identifier>home_recentRecordContainer</identifier>
-            </componentInstance>
-        </itemInstances>
         <mode>Replace</mode>
         <name>bottomLeft</name>
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentName>task3dropAndDown</componentName>
-                <identifier>c_task3dropAndDown</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentName>runtime_sales_activities:todayTaskContainer</componentName>
-                <identifier>runtime_sales_activities_todayTaskContainer</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentName>home:topDealsContainer</componentName>
-                <identifier>home_topDealsContainer</identifier>
-            </componentInstance>
-        </itemInstances>
         <mode>Replace</mode>
         <name>bottomRight</name>
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentName>home:assistant</componentName>
-                <identifier>home_assistant</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>Background_Color</name>
-                    <value>blue</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>Description</name>
-                    <value>This is my First Image Template</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>Font_Color</name>
-                    <value>black</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>Font_size</name>
-                    <value>20px</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>image_URl</name>
-                    <value>https://imgv3.fotor.com/images/homepage-feature-card/enhance-photo-of-three-girls-playing-in-the-sunflower-garden.png</value>
-                </componentInstanceProperties>
-                <componentName>task5HomePage</componentName>
-                <identifier>c_task5HomePage</identifier>
-            </componentInstance>
-        </itemInstances>
         <mode>Replace</mode>
         <name>sidebar</name>
         <type>Region</type>

@@ -6,7 +6,7 @@
     <enableEngageForOutlook>false</enableEngageForOutlook>
     <enableGmailIntegration>true</enableGmailIntegration>
     <enableOutlookIntegration>false</enableOutlookIntegration>
-    <isLayoutCustomizationAllowed>false</isLayoutCustomizationAllowed>
+    <isLayoutCustomizationAllowed>true</isLayoutCustomizationAllowed>
     <orgIsSyncingEventsOutbound>false</orgIsSyncingEventsOutbound>
     <shouldUseTrustedDomainsList>true</shouldUseTrustedDomainsList>
 </EmailIntegrationSettings>

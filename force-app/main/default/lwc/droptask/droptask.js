@@ -1,14 +1,11 @@
 import { api,track, LightningElement,wire } from 'lwc';
 import uploadFiles from '@salesforce/apex/dropbox1.uploadFiles';
 import fileDeta from '@salesforce/apex/dropbox1.fileDeta';
+import genrateLongTimeAccessToken from '@salesforce/apex/dropbox1.genrateLongTimeAccessToken';
+import changeToken from '@salesforce/apex/dropbox1.changeToken';
 
-import deleteFile from '@salesforce/apex/dropbox1.deleteFolderOrFile';
-import getFileData from '@salesforce/apex/dropbox1.getFileData';
 import { refreshApex } from "@salesforce/apex";
 import { CurrentPageReference } from 'lightning/navigation';
-
-
-
 
 
 export default class Droptask extends LightningElement {
@@ -16,6 +13,14 @@ export default class Droptask extends LightningElement {
 @api recordId;
 @track records;
 @track recordsToDisplay = [];
+@api token='';
+
+connectedCallback(){
+      genrateLongTimeAccessToken().then(result=>{
+            this.token=result;
+            console.log('token genrate'+ result);})
+      .catch(error=>{console.log('error---->',error);});
+}
 
 
 
@@ -36,6 +41,17 @@ handleActionFinished(event) {
   });
   window.location.reload(); 
 
+}
+handleClick(event){
+      alert('hello');
+      console.log('tokenaaaaaaaaaaaaaa:::::::'+ this.token);
+      changeToken({b : this.token})
+      .then(result=> {
+             console.log('result-->',result);
+       })
+      .catch(error => {
+             console.log('error-->',error);
+       });
 }
 
 

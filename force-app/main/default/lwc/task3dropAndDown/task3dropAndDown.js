@@ -1,4 +1,4 @@
-  import { LightningElement, track,wire } from 'lwc';
+import { LightningElement, track,wire } from 'lwc';
 import getFileVersions from "@salesforce/apex/catchAccount.getAccount";
 import { publish , MessageContext } from 'lightning/messageService';
 import filterContact from '@salesforce/messageChannel/MyMessageChannel__c';

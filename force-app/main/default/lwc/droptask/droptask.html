@@ -1,14 +1,13 @@
 <template>
     <lightning-card>
+        <lightning-button variant="brand" label="Token" title="Primary action" class="slds-m-left_x-small" onclick={handleClick}></lightning-button>
        
             <lightning-file-upload label={label} name="fileUploader" record-id={recordId} onuploadfinished={handleActionFinished} multiple>
             </lightning-file-upload>
             <br>
             <br>
             <hr>
-   
-    </lightning-card>
-
+        </lightning-card>
 </template>
 
 

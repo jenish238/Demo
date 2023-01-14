@@ -14,7 +14,6 @@ public with sharing class task11 {
                     accShare.AccountAccessLevel = 'Read';
                     accShare.OpportunityAccessLevel = 'Read';
                     insert accShare;
-                    Integer b =1/0;
                     
                 } catch (Exception e) {
                     

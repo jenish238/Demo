@@ -185,4 +185,3 @@ export default class Task2PeriveandNext extends LightningElement {
     //     this.connectedCallback();
     //     // alert('No. of files uploaded : ' + uploadedFiles.length);
     // }
-            
