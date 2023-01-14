@@ -1,0 +1,8 @@
+<apex:page controller="Dropbox" title="DropBox Login" >
+<!-- Begin Default Content REMOVE THIS -->
+<apex:form>
+<apex:commandButton id="login" action="{!getAuthorizationCode}" value="DropBox Page" rendered="{!!connected}" styleClass="slds-button slds-button_brand"></apex:commandButton>
+<apex:commandButton id="login1" action="{!getAccessToken}" value="Dropbox login" rendered="{!!connected}" styleClass="slds-button slds-button_brand"></apex:commandButton>
+                            
+</apex:form>
+</apex:page>

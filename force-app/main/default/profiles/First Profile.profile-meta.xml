@@ -179,6 +179,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ConPdfEmailLightningC</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ContactController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -196,6 +200,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>Deshbord</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Dropbox</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -315,6 +323,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copyTask</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>day1task3</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -324,6 +336,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>draganddroptask2</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dropBoxApi</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>dropbox1</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -339,6 +359,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>getRecode</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>getfile</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -351,7 +375,15 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>newListFileClass</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>sample123class</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>sendmail</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -1007,6 +1039,10 @@
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
+        <apexPage>DropBoxVf</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
         <apexPage>Exception</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
@@ -1079,6 +1115,14 @@
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
+        <apexPage>dropboxpage</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>droptask</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
         <apexPage>error</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
@@ -1088,6 +1132,14 @@
     </pageAccesses>
     <pageAccesses>
         <apexPage>funturemethodclass</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>intretask2</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>inttask</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>

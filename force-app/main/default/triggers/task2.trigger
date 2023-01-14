@@ -4,7 +4,6 @@ trigger task2 on Lead (before insert) {
             for(Lead eachLead: Trigger.New){
                 eachLead.Rating = 'Hot';
             }
-            Integer a =1/0;
             
         } catch (Exception e) {
             System.debug(e);

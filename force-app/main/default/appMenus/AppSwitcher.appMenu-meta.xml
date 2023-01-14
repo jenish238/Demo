@@ -180,4 +180,16 @@
         <name>DEVHUB_ngppmqfl2dyzuyxz7zv8</name>
         <type>ConnectedApp</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>Dropbox_for_SF__Dropbox</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>Test_Rest_API</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>Postman_with_salesforce</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
 </AppMenu>

@@ -1,8 +1,8 @@
 import { api,track, LightningElement,wire } from 'lwc';
-import uploadFiles from '@salesforce/apex/dropbox1.uploadFiles';
 import deleteFile from '@salesforce/apex/dropbox1.deleteFolderOrFile';
 import getFileData from '@salesforce/apex/dropbox1.getFileData';
-import { refreshApex } from "@salesforce/apex";
+import genrateLongTimeAccessToken from '@salesforce/apex/dropbox1.genrateLongTimeAccessToken';
+
 
 
 
@@ -33,6 +33,10 @@ export default class Dropboxdelete extends LightningElement {
     handleChange(e) {
         this.value = e.detail.value;
     }
+    handleClick1(event){
+       genrateLongTimeAccessToken().then(result=>{console.log('token genrate');})
+       .catch(error=>{console.log('error---->',error);});
+ }
     
     
     connectedCallback(){

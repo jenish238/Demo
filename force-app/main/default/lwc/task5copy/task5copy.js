@@ -1,4 +1,3 @@
-
 import { LightningElement, track } from 'lwc';
 import getAccountData from '@salesforce/apex/copyTask.getAccountData';
 import getAccount from '@salesforce/apex/copyTask.getAccount';
@@ -271,4 +270,3 @@ export default class Task5copy extends LightningElement {
 //             console.log(JSON.stringify(this.Pricebook2s));
 //             console.log(JSON.stringify(this.Students));
 //             console.log(JSON.stringify(this.Schools));
-
